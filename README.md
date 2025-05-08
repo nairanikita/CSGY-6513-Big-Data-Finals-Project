@@ -20,45 +20,50 @@ This repository contains code and notebooks for analyzing NYC MTA subway ridersh
 ---
 
 ## 2. High-Level Code Logic
-1. **Data Preprocessing**
- ### Loading:
- ● Leveraged PySpark for handling large datasets and efficient sampling.
- ● Example: Sampled 1% of the "Hourly Ridership Data" for exploratory
- analysis to manage memory usage and improve computation speed.
- ### Cleaning:
- ● Removedduplicates to ensure data integrity.
- ● Handledmissing values to avoid inconsistencies in analysis.
- ● Standardized column names for uniformity across datasets.
- Transformation:
- ● Created ageosphere for mapping geographic locations using latitudes and
- ### longitudes.
- ● Calculated and added a distance parameter derived from geosphere calculations to analyze ridership patterns relative to location.
- ● Derived newfeatures, such as:
- ○ "DayofWeek"forunderstanding weekly ridership trends.
- ○ "HourofDay"for analyzing peak and off-peak usage.
- ### Merging:
- ● Integrated multiple datasets by utilizing key attributes:
- ○ Station Complex ID for unifying station-level data.
- ○ Transit Times for detailed ridership analysis.
- ○ AgencyInformation for merging ridership datasets.
 
-2. **Exploratory Analysis**
-   - Use Jupyter notebook to analyze hourly/daily ridership patterns.
-   - Visualize service alert frequency and impact on ridership.
-   - Map ADA-compliance gaps with GeoPandas.
+## 2.1 Loading
 
-3. **Model Training**
-   - Load processed data into a Pandas DataFrame.
-   - Split into training and test sets.
-   - Train an XGBoost regressor with hyperparameter tuning (randomized search).
-   - Evaluate R² and RMSE on test set.
+- Leveraged PySpark for handling large datasets and efficient sampling.  
+- Example: Sampled 1% of the "Hourly Ridership Data" for exploratory analysis to manage memory usage and improve computation speed.
 
-4. **Interpretability**
-   - Compute SHAP values on a stratified sample.
-   - Generate feature importance plots and local explanation examples.
+## 2.2 Cleaning
 
+- Removedduplicates to ensure data integrity.  
+- Handledmissing values to avoid inconsistencies in analysis.  
+- Standardized column names for uniformity across datasets.
 
+## 2.3 Transformation
 
+- Created ageosphere for mapping geographic locations using latitudes and longitudes.  
+- Calculated and added a distance parameter derived from geosphere calculations to analyze ridership patterns relative to location.  
+- Derived newfeatures, such as:  
+  - "DayofWeek"forunderstanding weekly ridership trends.  
+  - "HourofDay"for analyzing peak and off-peak usage.
+
+## 2.4 Merging
+
+- Integrated multiple datasets by utilizing key attributes:  
+  - Station Complex ID for unifying station-level data.  
+  - Transit Times for detailed ridership analysis.  
+  - AgencyInformation for merging ridership datasets.
+
+## 2.5 Exploratory Analysis
+
+- Use Jupyter notebook to analyze hourly/daily ridership patterns.  
+- Visualize service alert frequency and impact on ridership.  
+- Map ADA-compliance gaps with GeoPandas.
+
+## 2.6 Model Training
+
+- Load processed data into a Pandas DataFrame.  
+- Split into training and test sets.  
+- Train an XGBoost regressor with hyperparameter tuning (randomized search).  
+- Evaluate R² and RMSE on test set.
+
+## 2.7 Interpretability
+
+- Compute SHAP values on a stratified sample.  
+- Generate feature importance plots and local explanation examples.
 ---
 
 ## 3. Prerequisites
@@ -69,7 +74,6 @@ This repository contains code and notebooks for analyzing NYC MTA subway ridersh
 1. Clone the repository:
 2. Download the data
 3. Run both of the ipynb file,by setting the correct path of data. (Since data is too huge to upload it on github.)
-
 
 ---
 
