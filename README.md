@@ -1,0 +1,82 @@
+# README.md
+
+## Project: Urban Transit Reliability and Demand Forecasting
+by Jay Daftari(jd5829@nyu.edu), Akshat Mishra (am15111@nyu.edu) and Nikita Gupta(ng3230@nyu.edu).
+
+### Repository URL
+https://github.com/jd5829/CSGY6513-Urban-Transit-Project#running-the-project
+
+---
+
+## 1. Project Overview
+This repository contains code and notebooks for analyzing NYC MTA subway ridership, service alerts, accessibility, and forecasting future demand using big data techniques.
+
+**Key Components:**
+- **Data Ingestion & Cleaning:** `ingest_clean.py` ingests raw turnstile logs and service alerts, applies schema enforcement, deduplication, and feature engineering using PySpark.
+- **Exploratory Data Analysis (EDA):** `eda_notebook.ipynb` generates visualizations of ridership trends, alert impacts, and ADA compliance maps.
+- **Model Training & Interpretation:** `train_forecast.py` trains an XGBoost regression model on processed features, evaluates performance, and computes SHAP values for interpretability.
+
+---
+
+## 2. High-Level Code Logic
+1. **Data Preprocessing**
+ ### Loading:
+ ● Leveraged PySpark for handling large datasets and efficient sampling.
+ ● Example: Sampled 1% of the "Hourly Ridership Data" for exploratory
+ analysis to manage memory usage and improve computation speed.
+ ### Cleaning:
+ ● Removedduplicates to ensure data integrity.
+ ● Handledmissing values to avoid inconsistencies in analysis.
+ ● Standardized column names for uniformity across datasets.
+ Transformation:
+ ● Created ageosphere for mapping geographic locations using latitudes and
+ ### longitudes.
+ ● Calculated and added a distance parameter derived from geosphere calculations to analyze ridership patterns relative to location.
+ ● Derived newfeatures, such as:
+ ○ "DayofWeek"forunderstanding weekly ridership trends.
+ ○ "HourofDay"for analyzing peak and off-peak usage.
+ ### Merging:
+ ● Integrated multiple datasets by utilizing key attributes:
+ ○ Station Complex ID for unifying station-level data.
+ ○ Transit Times for detailed ridership analysis.
+ ○ AgencyInformation for merging ridership datasets.
+
+2. **Exploratory Analysis**
+   - Use Jupyter notebook to analyze hourly/daily ridership patterns.
+   - Visualize service alert frequency and impact on ridership.
+   - Map ADA-compliance gaps with GeoPandas.
+
+3. **Model Training**
+   - Load processed data into a Pandas DataFrame.
+   - Split into training and test sets.
+   - Train an XGBoost regressor with hyperparameter tuning (randomized search).
+   - Evaluate R² and RMSE on test set.
+
+4. **Interpretability**
+   - Compute SHAP values on a stratified sample.
+   - Generate feature importance plots and local explanation examples.
+
+
+
+---
+
+## 3. Prerequisites
+- **Python 3.8+**
+- **Git**
+
+## 4. Installation and Running the Project
+1. Clone the repository:
+2. Download the data
+3. Run both of the ipynb file,by setting the correvt path of data. (Since data is too huge to upload it on github.)
+
+
+---
+
+## 5. File Structure
+```
+├── big-data-project.ipynb  #Analysis and Forecasting
+├── ridership-analysis.ipynb # Analysis
+└── README.md            # This file
+```
+
+---
