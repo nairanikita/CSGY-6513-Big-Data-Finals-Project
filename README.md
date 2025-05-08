@@ -12,9 +12,10 @@ https://github.com/jd5829/CSGY6513-Urban-Transit-Project#running-the-project
 This repository contains code and notebooks for analyzing NYC MTA subway ridership, service alerts, accessibility, and forecasting future demand using big data techniques.
 
 **Key Components:**
-- **Data Ingestion & Cleaning:** `ingest_clean.py` ingests raw turnstile logs and service alerts, applies schema enforcement, deduplication, and feature engineering using PySpark.
-- **Exploratory Data Analysis (EDA):** `eda_notebook.ipynb` generates visualizations of ridership trends, alert impacts, and ADA compliance maps.
-- **Model Training & Interpretation:** `train_forecast.py` trains an XGBoost regression model on processed features, evaluates performance, and computes SHAP values for interpretability.
+- **ridership-analysis.ipynb:** Explores all processed data sources to derive insights into ridership trends, service alert impacts, and accessibility patterns. Includes time-series visualizations (rush-hour peaks, midday troughs), alert frequency histograms, and GeoPandas maps of ADA compliance.
+- **big-data-project.ipynb:** Trains and evaluates an XGBoost regression model for daily ridership forecasting. Implements hyperparameter tuning (randomized search), model evaluation metrics (R², RMSE), and SHAP-based global and local feature importance analyses.
+
+-  **Dashboard:**
 
 ---
 
@@ -67,7 +68,7 @@ This repository contains code and notebooks for analyzing NYC MTA subway ridersh
 ## 4. Installation and Running the Project
 1. Clone the repository:
 2. Download the data
-3. Run both of the ipynb file,by setting the correvt path of data. (Since data is too huge to upload it on github.)
+3. Run both of the ipynb file,by setting the correct path of data. (Since data is too huge to upload it on github.)
 
 
 ---
