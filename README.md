@@ -52,15 +52,22 @@ This repository contains code and notebooks for analyzing NYC MTA subway ridersh
 - Use Jupyter notebook to analyze hourly/daily ridership patterns.  
 - Visualize service alert frequency and impact on ridership.  
 - Map ADA-compliance gaps with GeoPandas.
+  
+## 2.6  MTA Ridership Explorer Dashboard
+- **Dynamic Filtering & Metrics**: Select any station and date range to instantly update total and average daily ridership, with easy CSV export.  
+- **Multi-Scale Time-Series Views**: Visualize ridership over hours, days, and weeks through interactive Plotly charts to uncover peak usage patterns.  
+- **Geospatial Context**: See each station’s location on an embedded Folium map, aiding route planning and spatial analysis.  
+- **Forecasting & Trend Analysis**: Generate 7-day ridership forecasts using Prophet (with uncertainty bands) and compare multiple stations’ daily trends side-by-side by borough.  
+- **Revenue & Operational Insights**: Drill into revenue by payment method and fare class via a vibrant sunburst chart, and explore additional insights like ridership vs. distance to central and hour-of-day breakdowns.  
 
-## 2.6 Model Training
+## 2.7 Model Training
 
 - Load processed data into a Pandas DataFrame.  
 - Split into training and test sets.  
 - Train an XGBoost regressor with hyperparameter tuning (randomized search).  
 - Evaluate R² and RMSE on test set.
 
-## 2.7 Interpretability
+## 2.8 Interpretability
 
 - Compute SHAP values on a stratified sample.  
 - Generate feature importance plots and local explanation examples.
